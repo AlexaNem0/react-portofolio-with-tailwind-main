@@ -32,8 +32,203 @@ import web55 from "../public/web55.png";
 import web66 from "../public/web66.png";
 
 const FirstName = "Viktor Alieksieiev";
+
+const links = [
+  { id: 1, icon: <AiFillGithub />, href: "https://github.com/AlexaNem0" },
+  {
+    id: 2,
+    icon: <AiFillLinkedin />,
+    href: "https://www.linkedin.com/in/victor-alekseev-936692129/",
+  },
+  {
+    id: 3,
+    icon: <SiFrontendmentor />,
+    href: "https://www.frontendmentor.io/profile/AlexaNem0",
+  },
+
+  {
+    id: 4,
+    icon: <SiCodewars />,
+    href: "https://www.codewars.com/users/AlexaNem0",
+  },
+];
+
+const services = [
+  {
+    id: 5,
+    title: "Beautiful Designs",
+    description:
+      "Creating elegant designs suited for your needs following core design theory.",
+    variants: "Design Tools I Use",
+    tools: [
+      {
+        id: 6,
+        name: "PhotoShop",
+        icon: <SiAdobephotoshop className="text-3xl text-orange-300 " />,
+      },
+      {
+        id: 7,
+        name: "Illustrator",
+        icon: <SiAdobeillustrator className="text-3xl text-orange-300 " />,
+      },
+      {
+        id: 8,
+        name: "Indesign",
+        icon: <SiAdobeindesign className="text-3xl text-orange-300 " />,
+      },
+      {
+        id: 9,
+        name: "Figma",
+        icon: <CgFigma className="text-3xl text-orange-300 " />,
+      },
+    ],
+    icon: (
+      <Image
+        src={design}
+        width={100}
+        height={100}
+        alt="Design"
+        className="flex justify-center"
+      />
+    ),
+  },
+  {
+    id: 10,
+    title: "Code your dream project",
+    description:
+      "Do you have an idea for your next great website? Let's make it a reality.",
+    variants: "Frond End Tools I Use",
+    tools: [
+      {
+        id: 11,
+        name: "JavaScript",
+        icon: <SiJavascript className="text-3xl text-orange-300 " />,
+      },
+      {
+        id: 12,
+        name: "TypeScript",
+        icon: <SiTypescript className="text-3xl text-orange-300 " />,
+      },
+      {
+        id: 13,
+        name: "ReactJS",
+        icon: <FaReact className="text-3xl text-orange-300 " />,
+      },
+      {
+        id: 14,
+        name: "HTML",
+        icon: <SiHtml5 className="text-3xl text-orange-300 " />,
+      },
+      {
+        id: 15,
+        name: "CSS",
+        icon: <SiCss3 className="text-3xl text-orange-300 " />,
+      },
+    ],
+    icon: <Image src={code} width={100} height={100} alt="Code" />,
+  },
+  {
+    id: 16,
+    title: "Back End Support",
+    description:
+      "Do you require Back End support for your current project? I can give you tips and tricks to level it up.",
+    variants: "Back End Tools I Use",
+    tools: [
+      {
+        id: 17,
+        name: "Firebase",
+        icon: <SiFirebase className="text-3xl text-orange-300" />,
+      },
+      {
+        id: 18,
+        name: "MongoDB",
+        icon: <SiMongodb className="text-3xl text-orange-300 " />,
+      },
+      {
+        id: 19,
+        name: "NextJS",
+        icon: <TbBrandNextjs className="text-3xl text-orange-300 " />,
+      },
+      {
+        id: 20,
+        name: "NestJS",
+        icon: <SiNestjs className="text-3xl text-orange-300 " />,
+      },
+    ],
+    icon: (
+      <Image src={consulting} width={100} height={100} alt="Back End Support" />
+    ),
+  },
+];
+
+const projects = [
+  {
+    id: 21,
+    title: " HTML CSS JavaScript",
+    description: "Omnifood",
+    href: "https://myomnifoodpr.netlify.app/",
+    image: (
+      <Image src={web11} alt="Omnifood" className="object-fill rounded-lg" />
+    ),
+  },
+
+  {
+    id: 22,
+    title: "HTML Tailwind JavaScript",
+    description: "Manage",
+    href: "https://frontmanagelp.netlify.app/",
+    image: (
+      <Image src={web22} alt="Manage" className="object-fill rounded-lg" />
+    ),
+  },
+
+  {
+    id: 23,
+    title: "ReactJS Tailwind",
+    description: "UltraEats",
+    href: "https://ultraeats.netlify.app/",
+    image: (
+      <Image src={web33} alt="UltraEats" className="object-fill rounded-lg" />
+    ),
+  },
+
+  {
+    id: 24,
+    title: "HTML Tailwind JavaScript",
+    description: "Alex Rockets",
+    href: "https://alexrockets.netlify.app",
+    image: (
+      <Image
+        src={web44}
+        alt="Alex Rockets"
+        className="object-fill rounded-lg"
+      />
+    ),
+  },
+
+  {
+    id: 25,
+    title: "ReactJS Tailwind",
+    description: "Fylo",
+    href: "https://fylofem1.netlify.app/",
+    image: <Image src={web55} alt="Fylo" className="object-fill rounded-lg" />,
+  },
+
+  {
+    id: 26,
+    title: "ReactJS Tailwind",
+    description: "Not real trading application",
+    href: "https://notrealtradeapp.netlify.app/",
+    image: <Image src={web66} alt="Trade" className="object-fill rounded-lg" />,
+  },
+];
+
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -43,29 +238,32 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="px-10 bg-white dark:bg-gray-900 md:px-20 lg:px-40">
+        {/* Navigation */}
+        <nav className="flex justify-between py-10 mb-12 dark:text-white">
+          <h1 className="text-xl lg:text-3xl md:text-2xl lg:font-burtons hover:scale-105">
+            @lexaNem0
+          </h1>
+          <ul className="flex items-center">
+            <li className="transition duration-300 ease-in-out delay-300 hover:rotate-180">
+              <BsFillMoonStarsFill
+                onClick={toggleDarkMode}
+                className="text-2xl cursor-pointer"
+              />
+            </li>
+            <li className="transition duration-500 ease-in-out delay-300 hover:scale-125">
+              <a
+                className="px-4 py-2 ml-8 text-white border-none rounded-md bg-gradient-to-r from-cyan-500 to-teal-500"
+                href="https://docs.google.com/document/d/1378qwHlOK7TdVfQGt3xQ1ufRf6qmLFnS/edit?usp=sharing&ouid=116848366544717899951&rtpof=true&sd=true"
+                target="blank"
+              >
+                Resume
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        {/* About Section */}
         <section className="min-h-screen">
-          <nav className="flex justify-between py-10 mb-12 dark:text-white">
-            <h1 className="text-xl lg:text-3xl md:text-2xl lg: font-burtons hover:scale-125">
-              @lexaNem0
-            </h1>
-            <ul className="flex items-center ">
-              <li className="transition duration-300 ease-in-out delay-300 hover:rotate-180">
-                <BsFillMoonStarsFill
-                  onClick={() => setDarkMode(!darkMode)}
-                  className="text-2xl cursor-pointer "
-                />
-              </li>
-              <li className="transition duration-500 ease-in-out delay-300 hover:scale-125">
-                <a
-                  className="px-4 py-2 ml-8 text-white border-none rounded-md bg-gradient-to-r from-cyan-500 to-teal-500 "
-                  href="https://docs.google.com/document/d/1378qwHlOK7TdVfQGt3xQ1ufRf6qmLFnS/edit?usp=sharing&ouid=116848366544717899951&rtpof=true&sd=true"
-                  target="blank"
-                >
-                  Resume
-                </a>
-              </li>
-            </ul>
-          </nav>
           <div className="p-10 py-10 text-center">
             <h2 className="py-2 text-5xl font-bold text-teal-600 dark:text-teal-400 md:text-7xl">
               Viktor Alieksieiev
@@ -73,6 +271,7 @@ export default function Home() {
             <h3 className="py-2 text-2xl dark:text-white md:text-4xl">
               Front-end Developer.
             </h3>
+            {/* Introduction text */}
             <p className="max-w-xl py-5 mx-auto leading-8 text-gray-800 text-md dark:text-gray-200 md:text-xl">
               Hey there! I am a friendly and passionate front-end developer who
               loves building websites that not only look great but also meet
@@ -80,37 +279,23 @@ export default function Home() {
               like you to understand your requirements, create strategic plans,
               and design websites that are user-friendly and high-performing.
             </p>
+
+            {/* Social Media Icons */}
             <div className="flex justify-center gap-8 py-3 text-5xl text-gray-600 dark:text-gray-400 sm:gap-16">
-              <a
-                className="transition duration-300 ease-in-out delay-300 hover:scale-125"
-                href="https://github.com/AlexaNem0"
-                target="blank"
-              >
-                <AiFillGithub />
-              </a>
-              <a
-                className="transition duration-300 ease-in-out delay-300 hover:animate-bounce"
-                href="https://www.linkedin.com/in/victor-alekseev-936692129/"
-                target="blank"
-              >
-                <AiFillLinkedin />
-              </a>
-              <a
-                className="transition duration-300 ease-in-out delay-300 hover:rotate-180"
-                href="https://www.frontendmentor.io/profile/AlexaNem0"
-                target="blank"
-              >
-                <SiFrontendmentor />
-              </a>
-              <a
-                className="transition duration-300 ease-in-out delay-300 hover:rotate-180"
-                href="https://www.codewars.com/users/AlexaNem0"
-                target="blank"
-              >
-                <SiCodewars />
-              </a>
+              {links.map((link) => (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  target="blank"
+                  className="transition duration-300 ease-in-out delay-300 hover:scale-125"
+                >
+                  {link.icon}
+                </a>
+              ))}
             </div>
           </div>
+
+          {/* Profile Image */}
           <div className="relative mx-auto my-10 overflow-hidden rounded-full bg-gradient-to-b from-teal-400 w-80 h-80 md:h-96 md:w-96 hover:scale-105">
             <Image
               src={deved}
@@ -120,9 +305,11 @@ export default function Home() {
             />
           </div>
         </section>
+
+        {/* Services Section */}
         <section>
           <div>
-            <h3 className="py-1 text-3xl dark:text-white ">Services I offer</h3>
+            <h3 className="py-1 text-3xl dark:text-white">Services I offer</h3>
             <p className="py-2 leading-8 text-gray-800 text-md dark:text-gray-200">
               Throughout my freelance career as a designer and developer, I have
               gained experience working remotely for agencies, consulting with
@@ -130,137 +317,39 @@ export default function Home() {
               digital products for both business and consumer purposes.
             </p>
           </div>
+
+          {/* Service Cards */}
           <div className="gap-10 lg:flex">
-            <div className="flex-1 p-10 my-10 text-center transition duration-300 ease-in-out delay-300 shadow-lg rounded-xl dark:bg-white hover:scale-110">
-              <Image
-                src={design}
-                width={100}
-                height={100}
-                alt="Description of the image"
-              />
-              <h3 className="pt-8 pb-2 text-lg font-bold ">
-                Beautiful Designs
-              </h3>
-              <p className="py-2">
-                Creating elegant designs suited for your needs following core
-                design theory.
-              </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="py-1 text-gray-800 ">
-                <span className="inline-flex items-center text-xl">
-                  <SiAdobephotoshop className="mr-1 text-3xl text-orange-300" />{" "}
-                  PhotoShop
-                </span>
-              </p>
-              <p className="py-1 text-gray-800">
-                <span className="inline-flex items-center text-xl">
-                  <SiAdobeillustrator className="mr-1 text-3xl text-orange-300" />{" "}
-                  Illustrator
-                </span>
-              </p>
-              <p className="py-1 text-gray-800">
-                <span className="inline-flex items-center text-xl">
-                  <SiAdobeindesign className="mr-1 text-3xl text-orange-300" />{" "}
-                  Indesign
-                </span>
-              </p>
-              <p className="py-1 text-gray-800">
-                <span className="inline-flex items-center text-xl ">
-                  <CgFigma className="mr-1 text-3xl text-orange-300" /> Figma
-                </span>
-              </p>
-            </div>
-            <div className="flex-1 p-10 my-10 text-center transition duration-300 ease-in-out delay-300 shadow-lg rounded-xl dark:bg-white hover:scale-110">
-              <Image
-                src={code}
-                width={100}
-                height={100}
-                alt="Description of the image"
-              />
-              <h3 className="pt-8 pb-2 text-lg font-medium ">
-                Code your dream project
-              </h3>
-              <p className="py-2">
-                Do you have an idea for your next great website? Let&apos;s make
-                it a reality.
-              </p>
-              <h4 className="py-4 text-teal-600">Frond End Tools I Use</h4>
-
-              <p className="py-1 text-gray-800">
-                <p className="py-1 text-gray-800">
-                  <span className="inline-flex items-center text-xl ">
-                    <SiJavascript className="mr-2 text-3xl text-orange-300" />
-                    JavaScript
-                  </span>
-                </p>
-                <p className="py-1 text-gray-800">
-                  <span className="inline-flex items-center text-xl ">
-                    <SiTypescript className="mr-2 text-3xl text-orange-300" />
-                    TypeScript
-                  </span>
-                </p>
-                <p className="py-1 text-gray-800">
-                  <span className="inline-flex items-center text-xl ">
-                    <FaReact className="mr-1 text-3xl text-orange-300" />
-                    ReactJS
-                  </span>
-                </p>
-                <span className="inline-flex items-center text-xl ">
-                  <SiHtml5 className="mr-1 text-3xl text-orange-300" /> HTML
-                </span>
-              </p>
-              <p className="py-1 text-gray-800">
-                <span className="inline-flex items-center text-xl ">
-                  <SiCss3 className="mr-1 text-3xl text-orange-300" /> CSS
-                </span>
-              </p>
-            </div>
-            <div className="flex-1 p-10 my-10 text-center transition duration-300 ease-in-out delay-300 shadow-lg rounded-xl dark:bg-white hover:scale-110">
-              <Image
-                src={consulting}
-                width={100}
-                height={100}
-                alt="Description of the image"
-              />
-              <h3 className="pt-8 pb-2 text-lg font-medium ">
-                Back End Support
-              </h3>
-              <p className="py-2">
-                Do you require Back End support for your current project? I can
-                give you tips and tricks to level it up.
-              </p>
-              <h4 className="py-4 text-teal-600">Back End Tools I Use</h4>
-              <p className="py-1 text-gray-800 ">
-                <span className="inline-flex items-center text-xl ">
-                  <SiFirebase className="mr-1 text-3xl text-orange-300" />
-                  FireBase
-                </span>
-              </p>
-              <p className="py-1 text-gray-800">
-                <span className="inline-flex items-center text-xl ">
-                  <SiMongodb className="mr-1 text-3xl text-orange-300" />
-                  MongoDB
-                </span>
-              </p>
-
-              <p className="py-1 text-gray-800">
-                <span className="inline-flex items-center text-xl ">
-                  <TbBrandNextjs className="mr-1 text-3xl text-orange-300" />
-                  NextJS
-                </span>
-              </p>
-              <p className="py-1 text-gray-800">
-                <span className="inline-flex items-center text-xl ">
-                  <SiNestjs className="mr-1 text-3xl text-orange-300" />
-                  NestJS
-                </span>
-              </p>
-            </div>
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="flex-1 p-10 my-10 text-center transition duration-300 ease-in-out delay-300 shadow-lg rounded-xl dark:bg-white hover:scale-105"
+              >
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  {service.icon}
+                </div>
+                <h3 className="pt-8 pb-2 text-lg font-bold ">
+                  {service.title}
+                </h3>
+                <p className="py-2">{service.description}</p>
+                <h4 className="py-4 text-teal-600">{service.variants}</h4>
+                {service.tools.map((tool) => (
+                  <p key={tool.id} className="py-1 text-gray-800 ">
+                    <span className="inline-flex items-center gap-2 text-xl">
+                      {tool.icon}
+                      {tool.name}
+                    </span>
+                  </p>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
+
+        {/* Portfolio Section */}
         <section className="py-10">
           <div>
-            <h3 className="py-1 text-3xl dark:text-white ">Portofolio</h3>
+            <h3 className="py-1 text-3xl dark:text-white">Portfolio</h3>
             <p className="py-2 leading-8 text-gray-800 text-md dark:text-gray-200">
               Welcome to my front-end developer portfolio! I am thrilled to
               showcase my skills and expertise in creating visually stunning and
@@ -269,206 +358,94 @@ export default function Home() {
               that engage and captivate audiences.
             </p>
           </div>
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <div className="relative flex-1 basis-1/3 hover:scale-105">
-              <a
-                href="https://myomnifoodpr.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className="object-fill rounded-lg"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  src={web11}
-                  alt="Omnifood"
-                />
-                <div className="absolute inset-0 flex items-center justify-center text-white transition-opacity duration-300 bg-black rounded-lg opacity-0 bg-opacity-60 hover:opacity-100 ">
-                  <p className="text-lg text-orange-100 md:font-semibold md:text-lg lg:text-2xl">
-                    Landing page HTML CSS JavaScript
-                  </p>
-                </div>
-              </a>
-            </div>
 
-            <div className="relative flex-1 basis-1/3 hover:scale-105">
-              <a
-                href="https://frontmanagelp.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
+          {/* Portfolio Projects */}
+          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="relative flex-1 basis-1/3 hover:scale-105"
               >
-                <Image
-                  className="object-fill rounded-lg"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  src={web22}
-                  alt="Manage"
-                />
-                <div className="absolute inset-0 flex items-center justify-center text-white transition-opacity duration-300 bg-black rounded-lg opacity-0 bg-opacity-60 hover:opacity-100 ">
-                  <p className="text-lg text-orange-100 md:font-semibold md:text-lg lg:text-2xl">
-                    Landing page HTML Tailwind JavaScript
-                  </p>
-                </div>
-              </a>
-            </div>
-            <div className="relative flex-1 basis-1/3 hover:scale-105">
-              <a
-                href="https://ultraeats.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className="object-cover rounded-lg"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  src={web33}
-                  alt="Ultraeats"
-                />
-                <div className="absolute inset-0 flex items-center justify-center text-white transition-opacity duration-300 bg-black rounded-lg opacity-0 bg-opacity-60 hover:opacity-100 ">
-                  <p className="text-lg text-orange-100 md:font-semibold md:text-lg lg:text-2xl">
-                    Landing page ReactJS Tailwind
-                  </p>
-                </div>
-              </a>
-            </div>
-            <div className="relative flex-1 basis-1/3 hover:scale-105">
-              <a
-                href="https://alexrockets.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className="object-cover rounded-lg"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  src={web44}
-                  alt="Rockets"
-                />
-                <div className="absolute inset-0 flex items-center justify-center text-white transition-opacity duration-300 bg-black rounded-lg opacity-0 bg-opacity-60 hover:opacity-100 ">
-                  <p className="text-lg text-orange-100 md:font-semibold md:text-lg lg:text-2xl">
-                    Landing page HTML Tailwind JavaScript
-                  </p>
-                </div>
-              </a>
-            </div>
-            <div className="relative flex-1 basis-1/3 hover:scale-105">
-              <a
-                href="https://fylofem1.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className="object-cover rounded-lg"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  src={web55}
-                  alt="Description of the image"
-                />
-                <div className="absolute inset-0 flex items-center justify-center text-white transition-opacity duration-300 bg-black rounded-lg opacity-0 bg-opacity-60 hover:opacity-100 ">
-                  <p className="text-lg text-orange-100 md:font-semibold md:text-lg lg:text-2xl">
-                    Landing page ReactJS Tailwind
-                  </p>
-                </div>
-              </a>
-            </div>
-            <div className="relative flex-1 basis-1/3 hover:scale-105">
-              <a
-                href="https://notrealtradeapp.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className="object-cover rounded-lg"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  src={web66}
-                  alt="Not Real Trade App"
-                />
-                <div className="absolute inset-0 flex items-center justify-center text-white transition-opacity duration-300 bg-black rounded-lg opacity-0 bg-opacity-60 hover:opacity-100 ">
-                  <p className="text-lg text-orange-100 md:font-semibold md:text-lg lg:text-2xl">
-                    Landing page ReactJS Tailwind
-                  </p>
-                </div>
-              </a>
-            </div>
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {project.image}
+                  <div className="absolute inset-0 flex items-center justify-center text-white transition-opacity duration-300 bg-black rounded-lg opacity-0 bg-opacity-60 hover:opacity-100 ">
+                    <p className="text-lg text-orange-100 md:font-semibold md:text-lg lg:text-2xl ">
+                      {project.title}
+                    </p>
+                  </div>
+                </a>
+              </div>
+            ))}
           </div>
         </section>
       </main>
+
+      {/* Contact Section */}
       <section>
-        <div className="flex items-center justify-center p-12 dark:text-teal-400 dark:bg-gray-900 ">
-          <div className="mx-auto w-full   max-w-[550px]">
+        <div className="flex items-center justify-center p-12 dark:text-teal-400 dark:bg-gray-900">
+          <div className="mx-auto w-full max-w-[550px]">
             <h2 className="mb-10 text-xl">Let&apos;s get in touch!</h2>
             <form action="https://formbold.com/s/9BvZw" method="POST">
-              <div className="mb-5">
-                <label
-                  htmlFor="name"
-                  className="mb-3 block text-base font-medium text-[#07074D] dark:text-teal-400"
-                >
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Full Name"
-                  required
-                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md "
-                />
-              </div>
-              <div className="mb-5">
-                <label
-                  htmlFor="email"
-                  className="mb-3 block text-base font-medium text-[#07074D] dark:text-teal-400"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="example@domain.com"
-                  required
-                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                />
-              </div>
-              <div className="mb-5">
-                <label
-                  htmlFor="subject"
-                  className="mb-3 block text-base font-medium text-[#07074D]dark:text-teal-400"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  id="subject"
-                  required
-                  placeholder="Enter your subject"
-                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                />
-              </div>
-              <div className="mb-5">
-                <label
-                  htmlFor="message"
-                  className="mb-3 block text-base font-medium text-[#07074D]dark:text-teal-400"
-                >
-                  Message
-                </label>
-                <textarea
-                  rows="4"
-                  name="message"
-                  id="message"
-                  required
-                  placeholder="Type your message"
-                  className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                ></textarea>
-              </div>
+              {/* Form Inputs */}
+              {[
+                {
+                  label: "Full Name",
+                  type: "text",
+                  name: "name",
+                  placeholder: "Full Name",
+                },
+                {
+                  label: "Email Address",
+                  type: "email",
+                  name: "email",
+                  placeholder: "example@domain.com",
+                },
+                {
+                  label: "Subject",
+                  type: "text",
+                  name: "subject",
+                  placeholder: "Enter your subject",
+                },
+                {
+                  label: "Message",
+                  type: "textarea",
+                  name: "message",
+                  placeholder: "Type your message",
+                },
+              ].map((input) => (
+                <div key={input.id} className="mb-5">
+                  <label
+                    htmlFor={input.name}
+                    className="mb-3 block text-base font-medium text-[#07074D] dark:text-teal-400"
+                  >
+                    {input.label}
+                  </label>
+                  {input.type === "textarea" ? (
+                    <textarea
+                      rows="4"
+                      name={input.name}
+                      id={input.name}
+                      required
+                      placeholder={input.placeholder}
+                      className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                    />
+                  ) : (
+                    <input
+                      type={input.type}
+                      name={input.name}
+                      id={input.name}
+                      required
+                      placeholder={input.placeholder}
+                      className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                    />
+                  )}
+                </div>
+              ))}
+              {/* Submit Button */}
               <div>
                 <button className="px-8 py-3 text-base font-semibold text-white transition duration-500 ease-in-out delay-300 rounded-md outline-none hover:shadow-form bg-gradient-to-r from-cyan-500 to-teal-500 hover:scale-125">
                   Submit
