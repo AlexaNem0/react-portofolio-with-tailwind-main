@@ -273,11 +273,12 @@ export default function Home() {
             </h3>
             {/* Introduction text */}
             <p className="max-w-xl py-5 mx-auto leading-8 text-gray-800 text-md dark:text-gray-200 md:text-xl">
-              Hey there! I am a friendly and passionate front-end developer who
-              loves building websites that not only look great but also meet
-              your specific goals. I have a knack for collaborating with clients
-              like you to understand your requirements, create strategic plans,
-              and design websites that are user-friendly and high-performing.
+              Greetings! I am a front-end developer with a passion for creating
+              user-centered, high-performing websites that exceed my clients
+              expectations. I have a proven track record of collaborating with
+              clients to understand their unique needs and goals, then
+              developing and implementing custom solutions that are both
+              visually appealing and effective.
             </p>
 
             {/* Social Media Icons */}
@@ -296,7 +297,7 @@ export default function Home() {
           </div>
 
           {/* Profile Image */}
-          <div className="relative mx-auto my-10 overflow-hidden rounded-full bg-gradient-to-b from-teal-400 w-80 h-80 md:h-96 md:w-96 hover:scale-105">
+          <div className="relative mx-auto my-10 overflow-hidden border-4 border-gray-600 rounded-full dark:border-slate-100 w-60 h-60 bg-gradient-to-b from-teal-400 md:h-96 md:w-96 hover:scale-105">
             <Image
               src={deved}
               layout="fill"
@@ -311,10 +312,20 @@ export default function Home() {
           <div>
             <h3 className="py-1 text-3xl dark:text-white">Services I offer</h3>
             <p className="py-2 leading-8 text-gray-800 text-md dark:text-gray-200">
-              Throughout my freelance career as a designer and developer, I have
-              gained experience working remotely for agencies, consulting with
-              startups, and collaborating with talented individuals to create
-              digital products for both business and consumer purposes.
+              Over the course of my dynamic career as a designer and developer,
+              I have accumulated a wealth of experience that spans a diverse
+              spectrum of projects. From collaborating with innovative startups
+              to lending my expertise to established agencies, I have honed my
+              craft and embraced the challenges of remote work. This journey has
+              not only deepened my technical proficiency but also fostered a
+              keen understanding of the nuances that distinguish digital
+              products crafted for businesses and those tailored to delight
+              consumers. My professional voyage has been marked by fruitful
+              partnerships with talented individuals, each interaction leaving
+              an indelible mark on my approach to crafting digital experiences.
+              This multifaceted journey has equipped me with the knowledge and
+              versatility to bring creativity and innovation to every project I
+              undertake.
             </p>
           </div>
 
