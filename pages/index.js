@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import {
   SiFrontendmentor,
   SiAdobeindesign,
@@ -253,7 +252,7 @@ export default function Home() {
             <li className="transition duration-500 ease-in-out delay-300 hover:scale-125">
               <a
                 className="px-4 py-2 ml-8 text-white border-none rounded-md bg-gradient-to-r from-cyan-500 to-teal-500"
-                href="https://docs.google.com/document/d/1378qwHlOK7TdVfQGt3xQ1ufRf6qmLFnS/edit?usp=sharing&ouid=116848366544717899951&rtpof=true&sd=true"
+                href="https://docs.google.com/document/d/1aYSKttLRXcMs__9tytDjAzfhBAz9G6bv/edit?usp=sharing&ouid=116848366544717899951&rtpof=true&sd=true"
                 target="blank"
               >
                 Resume
