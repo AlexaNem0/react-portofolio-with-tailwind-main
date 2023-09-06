@@ -14,7 +14,7 @@ import {
   SiTypescript,
   SiCodewars,
 } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { TbBrandNextjs } from "react-icons/tb";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { CgFigma } from "react-icons/cg";
@@ -34,21 +34,21 @@ import web66 from "../public/web66.png";
 const FirstName = "Viktor Alieksieiev";
 
 const links = [
-  { id: 1, icon: <AiFillGithub />, href: "https://github.com/AlexaNem0" },
+  { id: 1, icon: <FaGithubSquare />, href: "https://github.com/AlexaNem0" },
   {
     id: 2,
-    icon: <AiFillLinkedin />,
+    icon: <FaLinkedin />,
     href: "https://www.linkedin.com/in/victor-alekseev-936692129/",
   },
   {
     id: 3,
-    icon: <SiFrontendmentor />,
+    icon: <SiFrontendmentor className="w-11 h-11" />,
     href: "https://www.frontendmentor.io/profile/AlexaNem0",
   },
 
   {
     id: 4,
-    icon: <SiCodewars />,
+    icon: <SiCodewars className="w-11 h-11" />,
     href: "https://www.codewars.com/users/AlexaNem0",
   },
 ];
@@ -216,7 +216,7 @@ const projects = [
 
   {
     id: 26,
-    title: "ReactJS Tailwind",
+    title: "ReactJS CSS Modules",
     description: "Not real trading application",
     href: "https://notrealtradeapp.netlify.app/",
     image: <Image src={web66} alt="Trade" className="object-fill rounded-lg" />,
@@ -265,7 +265,7 @@ export default function Home() {
         {/* About Section */}
         <section className="min-h-screen">
           <div className="p-10 py-10 text-center">
-            <h2 className="py-2 text-5xl font-bold text-teal-600 dark:text-teal-400 md:text-7xl">
+            <h2 className="py-2 text-4xl font-bold text-teal-600 sm:text-5xl dark:text-teal-400 md:text-7xl">
               Viktor Alieksieiev
             </h2>
             <h3 className="py-2 text-2xl dark:text-white md:text-4xl">
@@ -273,12 +273,17 @@ export default function Home() {
             </h3>
             {/* Introduction text */}
             <p className="max-w-xl py-5 mx-auto leading-8 text-gray-800 text-md dark:text-gray-200 md:text-xl">
-              Greetings! I am a front-end developer with a passion for creating
-              user-centered, high-performing websites that exceed my clients
-              expectations. I have a proven track record of collaborating with
-              clients to understand their unique needs and goals, then
-              developing and implementing custom solutions that are both
-              visually appealing and effective.
+              Greetings! I&apos;m a passionate and innovative web developer with
+              a strong penchant for creating immersive digital experiences. My
+              journey in the world of web development began with a fascination
+              for turning ideas into functional and visually stunning websites.
+              I thrive on solving complex problems with elegant solutions and
+              staying up-to-date with the latest technologies to deliver
+              cutting-edge web solutions. With a keen eye for design aesthetics
+              and a commitment to user-centric development, I strive to make the
+              internet a more user-friendly and beautiful place, one project at
+              a time.Let&apos;s embark on a digital journey together and bring
+              your ideas to life on the web.
             </p>
 
             {/* Social Media Icons */}
@@ -310,8 +315,10 @@ export default function Home() {
         {/* Services Section */}
         <section>
           <div>
-            <h3 className="py-1 text-3xl dark:text-white">Services I offer</h3>
-            <p className="py-2 leading-8 text-gray-800 text-md dark:text-gray-200">
+            <h3 className="py-1 text-3xl text-center dark:text-white">
+              Services I offer
+            </h3>
+            <p className="py-2 leading-8 text-center text-gray-800 text-md dark:text-gray-200 lg:text-left">
               Over the course of my dynamic career as a designer and developer,
               I have accumulated a wealth of experience that spans a diverse
               spectrum of projects. From collaborating with innovative startups
@@ -360,13 +367,16 @@ export default function Home() {
         {/* Portfolio Section */}
         <section className="py-10">
           <div>
-            <h3 className="py-1 text-3xl dark:text-white">Portfolio</h3>
-            <p className="py-2 leading-8 text-gray-800 text-md dark:text-gray-200">
-              Welcome to my front-end developer portfolio! I am thrilled to
-              showcase my skills and expertise in creating visually stunning and
-              highly functional websites. With a passion for design and a knack
-              for coding, I specialize in delivering seamless user experiences
-              that engage and captivate audiences.
+            <h3 className="py-1 text-3xl text-center dark:text-white">
+              Portfolio
+            </h3>
+            <p className="py-2 leading-8 text-center text-gray-800 text-md dark:text-gray-200 lg:text-left">
+              Welcome to my front-end developer portfolio! I'm absolutely
+              excited to present my skills and expertise in crafting visually
+              captivating and incredibly functional websites. With a deep love
+              for design and a natural flair for coding, my focus is on
+              providing flawless user experiences that captivate and engage
+              audiences.
             </p>
           </div>
 
