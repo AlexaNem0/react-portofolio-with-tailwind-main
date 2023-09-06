@@ -371,7 +371,7 @@ export default function Home() {
               Portfolio
             </h3>
             <p className="py-2 leading-8 text-center text-gray-800 text-md dark:text-gray-200 lg:text-left">
-              Welcome to my front-end developer portfolio! I'm absolutely
+              Welcome to my front-end developer portfolio! I&apos;m absolutely
               excited to present my skills and expertise in crafting visually
               captivating and incredibly functional websites. With a deep love
               for design and a natural flair for coding, my focus is on
